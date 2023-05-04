@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="labelle.ico" type="image/x-icon">
+   
+    <title>Contatos</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   <header> 
+        <div class="center">
+            <img src="logo labelle 2.jpg" alt="">
+        </div>
+   </header>
+    <div class="center">
+        <form name="form1" method="post" action="grava.jsp">
+             Nome: 
+            <input type="text" name="txtNome" maxlength="50" size="80px">
+            <span id="erroNome"></span>
+            <br>
+            E-mail: 
+            <input type="email" name="txtEmail" maxlength="60" size="80px">
+            <span id="erroEmail"></span>
+            <br>
+            Mensagem
+            <br>
+            <textarea name="txtMensagem" cols="50" rows="15" ></textarea size="80px">
+            <span id="erroMensagem"></span>    
+            <br>
+            <input type="button" value="Enviar" onclick="verificar()">
+        </form>
+    </div>
+    <footer>
+        <a href="https://www.facebook.com/efigeniaexecutivaavon"target="_blank" rel="noopener noreferrer">
+            <img src="facebook.png"></img>
+            <p>Facebook</p>
+
+        <a href="https://www.instagram.com/efigeniaempresariadabelezaavon/" target="_blank" rel="noopener noreferrer">
+            <img src="instagram.png"></img>
+            <p>Instagram</p>
+
+        <a href="https://chat.whatsapp.com/KHW9u7YL0g1673thQNSQ77" target="_blank" rel="noopener noreferrer">
+            <img src="whatsapp.png"></img>
+            <p>Whatsapp</p>
+
+        <a href="https://goo.gl/maps/whp8cPeoi7ZXdozf7" target="_blank" rel="noopener noreferrer">
+            <img src="map.png"></img>
+            <p>Mapa</p>
+        </a>
+    </footer>
+
+    <script>
+        function verificar()
+        {
+            var enviar = true ;
+
+            var n = document.form1.txtNome.value ;
+            if( n.length == 0 )
+            {
+                enviar = false ;
+                document.querySelector("#erroNome")
+                    .textContent = "Preencha o campo nome" ;
+            }
+
+
+             var e = document.form1.txtEmail.value ;
+             if( e.indexOf("@") < 0 )
+             {
+                enviar = false ;
+                document.querySelector("#erroEmail")
+                    .textContent = "Preencha o campo Email" ;
+             }
+
+             var i = document.form1.txtMensagem.value ;
+            if( n.length == 0 )
+            {
+                enviar = false ;
+                document.querySelector("#erroMensagem")
+                    .textContent = "Preencha o campo Mensagem" ;
+            }
+
+
+                if(enviar)
+                {
+                document.form1.submit();
+                }
+
+        }
+    </script>
+    
+</body>
+</html>
